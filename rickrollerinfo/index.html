@@ -46,8 +46,16 @@
       }
     </style>
   </head>
-  <body class="w3-content" style="max-width: 1200px">
-    <!-- Sidebar/menu -->
+  <body style="display: flex; flex-direction: column; min-height: 100vh; margin: 0 auto; max-width: 1200px;">
+    <style>
+      .wrapper {
+        flex: 1 0 auto;
+      }
+      .footer-sticky {
+        flex-shrink: 0;
+        margin-left: 250px;
+      }
+    </style>
     <nav
       class="w3-sidebar w3-bar-block w3-custom w3-collapse w3-top"
       style="z-index: 3; width: 250px"
@@ -88,7 +96,6 @@
       }
     </style>
 
-    <!-- Top menu on small screens -->
     <header class="w3-bar w3-top w3-hide-large w3-custom w3-xlarge">
       <div class="w3-bar-item w3-padding-24 w3-wide"><b>RICKROLLER</b></div>
       <a
@@ -99,7 +106,6 @@
       ></a>
     </header>
 
-    <!-- Overlay effect when opening sidebar on small screens -->
     <div
       class="w3-overlay w3-hide-large"
       onclick="w3_close()"
@@ -108,12 +114,11 @@
       id="myOverlay"
     ></div>
 
-    <!-- !PAGE CONTENT! -->
-    <div class="w3-main" style="margin-left: 250px">
-      <!-- Push down content on small screens -->
+
+    <div class="wrapper w3-content" style="max-width: 1200px;">
+    <div class="w3-main" style="margin-left: 250px;">
       <div class="w3-hide-large" style="margin-top: 83px"></div>
 
-      <!-- Top header -->
       <header class="w3-container w3-xlarge">
         <p class="w3-right">
           <img
@@ -128,7 +133,6 @@
         </p>
       </header>
 
-      <!-- Image header -->
       <div class="w3-display-container w3-container" id="link">
         <img
           src="https://github.com/pagedeploy/cdn/blob/main/discord/rbanner.png?raw=true"
@@ -236,23 +240,18 @@
         </p>
       </div>
 
-      <!-- Footer -->
-      <footer
-        class="w3-container w3-padding-12 w3-center w3-light-gray w3-xlarge w3-center"
-        id="footer"
-      >
-        <p class="w3-medium">
-          © 2023-2025 Scinovus Crafted
+      </div>
+    </div>
+
+    <footer class="footer-sticky w3-container w3-padding-12 w3-center w3-light-gray w3-small">
+        <p>
+          © 2023-2026 Scinovus Crafted
           <a href="tos.html">TOS</a>
           <a href="privacy.html">Privacy</a>
         </p>
       </footer>
 
-      <!-- End page content -->
-    </div>
-
     <script>
-      // Accordion
       function myAccFunc() {
         var x = document.getElementById("demoAcc");
         if (x.className.indexOf("w3-show") == -1) {
@@ -262,7 +261,6 @@
         }
       }
 
-      // Open and close sidebar
       function w3_open() {
         document.getElementById("mySidebar").style.display = "block";
         document.getElementById("myOverlay").style.display = "block";
